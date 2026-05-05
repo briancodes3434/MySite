@@ -1,85 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ShieldTech IT & Security</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header>
-  <nav class="container">
-    <h1>ShieldTech</h1>
-    <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+<header class="navbar">
+  <div class="logo">Shield<span>Tech</span></div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h2>Websites, IT Support & Cybersecurity for Small Businesses</h2>
-    <p>We help local businesses get online, stay secure, and run smoothly.</p>
-    <a href="#contact" class="btn">Get a Free Review</a>
+  <div class="grid-bg"></div>
+
+  <div class="hero-content">
+    <p class="badge">Local IT • Websites • Cybersecurity</p>
+    <h1>Modern Tech Protection for Small Businesses</h1>
+    <p class="subtitle">
+      We build professional websites, secure your systems, and keep your business running without tech headaches.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#contact" class="btn primary">Get a Free Review</a>
+      <a href="#services" class="btn secondary">View Services</a>
+    </div>
   </div>
 </section>
 
 <section id="services" class="section">
-  <div class="container">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Website Design</h3>
-        <p>Modern, mobile-friendly websites that bring in customers.</p>
-      </div>
-      <div class="card">
-        <h3>IT Support</h3>
-        <p>We set up and maintain your business tech so it just works.</p>
-      </div>
-      <div class="card">
-        <h3>Cybersecurity</h3>
-        <p>Protect your business from hacks, data loss, and downtime.</p>
-      </div>
+  <h2>What We Do</h2>
+  <p class="section-subtitle">Simple, powerful tech services built for local businesses.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h3>Website Design</h3>
+      <p>Modern, mobile-friendly websites that make your business look professional and trustworthy.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Cybersecurity</h3>
+      <p>Basic protection, secure logins, backups, SSL, and tools to reduce your risk of getting hacked.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>IT Support</h3>
+      <p>Device setup, email setup, Wi-Fi support, troubleshooting, and monthly tech maintenance.</p>
     </div>
   </div>
 </section>
 
-<section id="pricing" class="section alt">
-  <div class="container">
-    <h2>Simple Pricing</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Starter</h3>
-        <p>$499</p>
-        <p>Basic website + security setup</p>
-      </div>
-      <div class="card">
-        <h3>Pro</h3>
-        <p>$999</p>
-        <p>Full website + SEO + security</p>
-      </div>
-      <div class="card">
-        <h3>Monthly</h3>
-        <p>$75/mo</p>
-        <p>Maintenance + support + protection</p>
-      </div>
+<section class="stats">
+  <div>
+    <h3>Fast</h3>
+    <p>Quick website launches</p>
+  </div>
+  <div>
+    <h3>Secure</h3>
+    <p>Built with safety in mind</p>
+  </div>
+  <div>
+    <h3>Local</h3>
+    <p>Support for nearby businesses</p>
+  </div>
+</section>
+
+<section id="pricing" class="section">
+  <h2>Starter Packages</h2>
+  <p class="section-subtitle">Clear pricing for small business owners.</p>
+
+  <div class="pricing">
+    <div class="price-card">
+      <h3>Website Refresh</h3>
+      <p class="price">$499+</p>
+      <ul>
+        <li>Modern redesign</li>
+        <li>Mobile-friendly layout</li>
+        <li>Contact section</li>
+        <li>Basic SEO setup</li>
+      </ul>
+    </div>
+
+    <div class="price-card featured">
+      <div class="tag">Best Value</div>
+      <h3>Website + Security</h3>
+      <p class="price">$999+</p>
+      <ul>
+        <li>Full website setup</li>
+        <li>SSL/security basics</li>
+        <li>Backups</li>
+        <li>Google Business help</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <h3>Monthly Protection</h3>
+      <p class="price">$75/mo+</p>
+      <ul>
+        <li>Website updates</li>
+        <li>Security checks</li>
+        <li>Basic IT support</li>
+        <li>Ongoing maintenance</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section id="contact" class="section">
-  <div class="container">
-    <h2>Contact Us</h2>
-    <p>Email: yourname@email.com</p>
-    <p>Phone: (219) 000-0000</p>
+<section id="contact" class="contact">
+  <h2>Ready to Upgrade Your Business Tech?</h2>
+  <p>Get a free website or security review today.</p>
+
+  <div class="contact-box">
+    <p><strong>Email:</strong> yourname@email.com</p>
+    <p><strong>Phone:</strong> (219) 000-0000</p>
+    <p><strong>Location:</strong> Northwest Indiana</p>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 ShieldTech IT & Security</p>
+  <p>© 2026 ShieldTech IT & Security. Built for small businesses.</p>
 </footer>
 
 </body>
