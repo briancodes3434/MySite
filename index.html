@@ -247,24 +247,29 @@
     Get a free website or cybersecurity review today.
   </p>
 
-  <div class="contact-box">
+  <form class="contact-form" action="https://formspree.io/f/mqenbyqb" method="POST">
 
-    <p>
-      <strong>Email:</strong>
-      aegissight@gmail.com
-    </p>
-
-    <p>
-      <strong>Phone:</strong>
-      (219) 242-4551
-    </p>
-
-    <p>
-      <strong>Location:</strong>
-      Northwest Indiana
-    </p>
-
+  <div class="form-row">
+    <input type="text" name="name" placeholder="Your Name" required>
   </div>
+
+  <div class="form-row">
+    <input type="email" name="email" placeholder="Your Email" required>
+  </div>
+
+  <div class="form-row">
+    <input type="tel" name="phone" placeholder="Your Phone Number">
+  </div>
+
+  <div class="form-row">
+    <textarea name="message" placeholder="Tell us what you need help with" required></textarea>
+  </div>
+
+  <button type="submit" class="btn primary">
+    Send Message
+  </button>
+
+</form>
 
 </section>
 
