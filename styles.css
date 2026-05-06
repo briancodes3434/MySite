@@ -725,17 +725,70 @@ footer{
 @media (max-width:900px){
 
   .navbar{
+    padding:16px 6%;
     flex-direction:column;
+    gap:14px;
+  }
 
-    gap:18px;
+  .brand{
+    font-size:1.25rem;
+  }
+
+  .brand img{
+    width:44px;
+    height:44px;
   }
 
   nav{
-    flex-wrap:wrap;
-
+    width:100%;
     justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+  }
 
-    gap:16px;
+  nav a{
+    font-size:0.9rem;
+    padding:6px 8px;
+  }
+
+  .hero{
+    min-height:88vh;
+    padding:80px 6% 70px;
+  }
+
+  .hero-logo{
+    width:105px;
+    height:105px;
+    border-radius:24px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.6rem, 13vw, 4rem);
+    letter-spacing:-2px;
+  }
+
+  .hero-text{
+    font-size:1rem;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .trust-row span{
+    font-size:0.85rem;
+  }
+
+  .section,
+  .contact,
+  .service-page{
+    padding:75px 6%;
   }
 
   .cards,
@@ -745,20 +798,30 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .card,
+  .price-card,
+  .step,
+  .feature-box,
+  .contact-box{
+    padding:26px;
+    border-radius:22px;
+  }
+
   .featured{
     transform:none;
   }
 
-  .hero-logo{
-    width:115px;
-    height:115px;
-  }
-
-  .hero h1{
-    font-size:3.5rem;
+  .section h2,
+  .contact h2{
+    font-size:2.2rem;
   }
 
   .service-hero h1{
-    font-size:3rem;
+    font-size:2.7rem;
+    letter-spacing:-1.5px;
+  }
+
+  .service-cta{
+    padding:35px 24px;
   }
 }
