@@ -90,7 +90,16 @@ nav a:hover{
   z-index:0;
 }
 /* HERO */
-
+.hero-fade{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:260px;
+  background:linear-gradient(to bottom, transparent, #030712);
+  z-index:1;
+  pointer-events:none;
+}
 .hero{
   position:relative;
 
@@ -110,6 +119,10 @@ nav a:hover{
   radial-gradient(circle at top,rgba(0,229,255,0.14),transparent 30%),
   radial-gradient(circle at bottom right,rgba(99,102,241,0.18),transparent 35%),
   #030712;
+}
+.hero-content{
+  position:relative;
+  z-index:2;
 }
 
 .grid{
