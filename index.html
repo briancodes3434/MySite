@@ -277,6 +277,133 @@
 <footer>
   © 2026 AegisSight • Cybersecurity • IT Support • Web Solutions
 </footer>
+<!-- Chatbot Tab -->
+<div id="chatbot-tab" onclick="toggleChatbot()">💬 Help</div>
 
+<div id="chatbot-box">
+  <div id="chatbot-header">
+    <span>AegisSight Assistant</span>
+    <button onclick="toggleChatbot()">×</button>
+  </div>
+
+  <div id="chatbot-messages">
+    <div class="bot-msg">
+      Hi! What do you need help with?
+    </div>
+
+    <div class="chat-options">
+      <button onclick="selectCategory('website')">Website Design</button>
+      <button onclick="selectCategory('security')">Cybersecurity</button>
+      <button onclick="selectCategory('it')">IT Support</button>
+      <button onclick="selectCategory('pricing')">Pricing</button>
+      <button onclick="selectCategory('contact')">Contact</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  #chatbot-tab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #00e5ff;
+    color: #020617;
+    padding: 14px 18px;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.45);
+  }
+
+  #chatbot-box {
+    display: none;
+    position: fixed;
+    bottom: 85px;
+    right: 25px;
+    width: 330px;
+    background: #020617;
+    border: 1px solid rgba(0, 229, 255, 0.35);
+    border-radius: 18px;
+    overflow: hidden;
+    z-index: 9999;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.55);
+  }
+
+  #chatbot-header {
+    background: #07111f;
+    color: white;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  #chatbot-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  #chatbot-messages {
+    padding: 15px;
+    color: white;
+  }
+
+  .bot-msg {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .chat-options {
+    display: grid;
+    gap: 9px;
+  }
+
+  .chat-options button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    padding: 11px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .chat-options button:hover {
+    background: rgba(0, 229, 255, 0.12);
+  }
+</style>
+
+<script>
+  function toggleChatbot() {
+    const box = document.getElementById("chatbot-box");
+    box.style.display = box.style.display === "block" ? "none" : "block";
+  }
+
+  function selectCategory(category) {
+    const messages = document.getElementById("chatbot-messages");
+
+    const responses = {
+      website: "We help with modern website design, redesigns, mobile optimization, SEO cleanup, and professional layouts. Would you like a free website review?",
+      security: "We help protect businesses from weak passwords, website risks, data loss, and common online threats. A security review is a good place to start.",
+      it: "We help with devices, Wi-Fi, email, updates, troubleshooting, and general business tech support.",
+      pricing: "Our pricing starts at $120+ for a website refresh, $300+ for website plus security, and $75/mo+ for monthly support.",
+      contact: "You can contact us using the form on this page. Scroll to the contact section or click the Contact link in the menu."
+    };
+
+    messages.innerHTML += `
+      <div class="bot-msg">
+        ${responses[category]}
+      </div>
+    `;
+  }
+</script>
 </body>
 </html>
