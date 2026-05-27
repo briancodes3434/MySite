@@ -487,5 +487,35 @@
     `);
   }
 </script>
+  <!-- Floating Schedule Meeting Button -->
+<a
+  href=https://calendly.com/thepharoph/30min
+  target="_blank"
+  id="meeting-button"
+>
+  📅 Schedule Meeting
+</a>
+
+<style>
+  #meeting-button {
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+    background: #00e5ff;
+    color: #020617;
+    padding: 14px 18px;
+    border-radius: 999px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 0 25px rgba(0,229,255,0.45);
+    transition: 0.2s ease;
+  }
+
+  #meeting-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 35px rgba(0,229,255,0.65);
+  }
+</style>
 </body>
 </html>
