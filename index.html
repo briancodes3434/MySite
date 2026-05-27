@@ -277,7 +277,7 @@
 <footer>
   © 2026 AegisSight • Cybersecurity • IT Support • Web Solutions
 </footer>
-<!-- Chatbot Tab -->
+<!-- AegisSight Chatbot -->
 <div id="chatbot-tab" onclick="toggleChatbot()">💬 Help</div>
 
 <div id="chatbot-box">
@@ -288,15 +288,15 @@
 
   <div id="chatbot-messages">
     <div class="bot-msg">
-      Hi! What do you need help with?
+      Hi! I can help point you in the right direction. What do you need help with?
     </div>
 
     <div class="chat-options">
-      <button onclick="selectCategory('website')">Website Design</button>
-      <button onclick="selectCategory('security')">Cybersecurity</button>
-      <button onclick="selectCategory('it')">IT Support</button>
-      <button onclick="selectCategory('pricing')">Pricing</button>
-      <button onclick="selectCategory('contact')">Contact</button>
+      <button onclick="selectCategory('website')">🌐 Website Help</button>
+      <button onclick="selectCategory('security')">🛡️ Cybersecurity</button>
+      <button onclick="selectCategory('it')">💻 IT Support</button>
+      <button onclick="selectCategory('pricing')">💵 Pricing</button>
+      <button onclick="selectCategory('contact')">📞 Contact AegisSight</button>
     </div>
   </div>
 </div>
@@ -321,7 +321,8 @@
     position: fixed;
     bottom: 85px;
     right: 25px;
-    width: 330px;
+    width: 350px;
+    max-width: calc(100vw - 40px);
     background: #020617;
     border: 1px solid rgba(0, 229, 255, 0.35);
     border-radius: 18px;
@@ -351,14 +352,25 @@
   #chatbot-messages {
     padding: 15px;
     color: white;
+    max-height: 420px;
+    overflow-y: auto;
   }
 
-  .bot-msg {
-    background: rgba(255, 255, 255, 0.08);
+  .bot-msg, .user-msg {
     padding: 12px;
     border-radius: 12px;
     margin-bottom: 12px;
     line-height: 1.4;
+    font-size: 14px;
+  }
+
+  .bot-msg {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .user-msg {
+    background: rgba(0, 229, 255, 0.18);
+    border: 1px solid rgba(0, 229, 255, 0.3);
   }
 
   .chat-options {
@@ -379,6 +391,14 @@
   .chat-options button:hover {
     background: rgba(0, 229, 255, 0.12);
   }
+
+  .chat-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #00e5ff;
+    font-weight: bold;
+    text-decoration: none;
+  }
 </style>
 
 <script>
@@ -387,22 +407,84 @@
     box.style.display = box.style.display === "block" ? "none" : "block";
   }
 
-  function selectCategory(category) {
+  function addBotMessage(message) {
     const messages = document.getElementById("chatbot-messages");
+    messages.innerHTML += `<div class="bot-msg">${message}</div>`;
+    messages.scrollTop = messages.scrollHeight;
+  }
 
+  function addUserMessage(message) {
+    const messages = document.getElementById("chatbot-messages");
+    messages.innerHTML += `<div class="user-msg">${message}</div>`;
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function selectCategory(category) {
     const responses = {
-      website: "We help with modern website design, redesigns, mobile optimization, SEO cleanup, and professional layouts. Would you like a free website review?",
-      security: "We help protect businesses from weak passwords, website risks, data loss, and common online threats. A security review is a good place to start.",
-      it: "We help with devices, Wi-Fi, email, updates, troubleshooting, and general business tech support.",
-      pricing: "Our pricing starts at $120+ for a website refresh, $300+ for website plus security, and $75/mo+ for monthly support.",
-      contact: "You can contact us using the form on this page. Scroll to the contact section or click the Contact link in the menu."
+      website: `
+        We can help with website design, redesigns, mobile optimization, SEO cleanup, and professional layouts.
+        <br><br>
+        What best describes your situation?
+        <div class="chat-options">
+          <button onclick="quickReply('I need a new website')">I need a new website</button>
+          <button onclick="quickReply('I need my current website upgraded')">I need my current website upgraded</button>
+          <button onclick="quickReply('My website looks outdated')">My website looks outdated</button>
+        </div>
+      `,
+
+      security: `
+        We help businesses reduce cyber risk with password protection, website security, backups, SSL, and basic security checks.
+        <br><br>
+        What are you most worried about?
+        <div class="chat-options">
+          <button onclick="quickReply('I want a security review')">I want a security review</button>
+          <button onclick="quickReply('I am worried about hackers')">I am worried about hackers</button>
+          <button onclick="quickReply('I need backups or protection')">I need backups or protection</button>
+        </div>
+      `,
+
+      it: `
+        We help with business tech problems like devices, email, Wi-Fi, updates, troubleshooting, and support.
+        <br><br>
+        What kind of IT help do you need?
+        <div class="chat-options">
+          <button onclick="quickReply('I need computer or device help')">Computer/device help</button>
+          <button onclick="quickReply('I need email or Wi-Fi help')">Email/Wi-Fi help</button>
+          <button onclick="quickReply('I need monthly IT support')">Monthly IT support</button>
+        </div>
+      `,
+
+      pricing: `
+        Our starter pricing:
+        <br><br>
+        🌐 Website Refresh: $120+<br>
+        🛡️ Website + Security: $300+<br>
+        💻 Monthly Support: $75/mo+
+        <br><br>
+        Final pricing depends on the project size.
+        <a class="chat-link" href="#contact" onclick="toggleChatbot()">Request a quote →</a>
+      `,
+
+      contact: `
+        You can send a message through the contact form on this page.
+        <br><br>
+        <a class="chat-link" href="#contact" onclick="toggleChatbot()">Go to contact form →</a>
+      `
     };
 
-    messages.innerHTML += `
-      <div class="bot-msg">
-        ${responses[category]}
-      </div>
-    `;
+    addBotMessage(responses[category]);
+  }
+
+  function quickReply(text) {
+    addUserMessage(text);
+
+    addBotMessage(`
+      Great — that sounds like something AegisSight can help with.
+      <br><br>
+      The best next step is to request a free review. Include your name, email, phone number, and what you need help with.
+      <br><br>
+      <a class="chat-link" href="#contact" onclick="toggleChatbot()">Start free review →</a>
+    `);
   }
 </script>
 </body>
